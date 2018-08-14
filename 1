@@ -1,0 +1,31 @@
+<h3>Translate to desired Language </h3>
+<div>
+<b> Select any language</b></br>
+<select class="translate">
+<option value=en>English</option>
+<option value=fr>French</option>
+<option value=de>German</option>
+<option value=hi>Hindi</option>
+<option value=el>Greek</option>
+
+</select>
+<input type="button" class="btn btn-success transla_up" value="Update" />
+</div>
+
+
+
+
+<script>
+$('.transla_up').click(function(){
+var tr=$('.translate').val();
+$.ajax({
+type:"POST",
+url:"/polls/index/",
+data: {'tr_code'=tr},
+success:function(resp){
+alert(resp);
+    }
+  })
+});
+
+</script>
